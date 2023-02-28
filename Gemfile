@@ -9,8 +9,6 @@ gem "rails", "~> 7.0.4", ">= 7.0.4.2"
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 
-# Use sqlite3 as the database for Active Record
-gem "sqlite3", "~> 1.4"
 
 gem 'bootstrap-sass', '~> 3.4.1'
 
@@ -54,6 +52,10 @@ gem "bootsnap", require: false
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
+
+# Use sqlite3 as the database for Active Record
+gem "sqlite3", "~> 1.4"
+
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
 end
 
@@ -67,6 +69,11 @@ group :development do
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
 end
+
+group :production do
+  # Use Puma as the app server [
+  gem "pg"
+  end
 
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
