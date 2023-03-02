@@ -12,9 +12,11 @@ class ChefsController < ApplicationController
         render 'new'
       end
     end
-    def show
 
+    def show
+      @chef = Chef.find(params[:id])
     end
+    
     private
     
     def chef_params
