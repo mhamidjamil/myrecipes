@@ -2,9 +2,7 @@
 <div class = "jumbotron center">
 <h1>welcome to my recipes</h1>
 <h2>recipes share app!</h2>
-<p>
-<%= link_to "Sign up now!", "#", class: "btn btn-lg btn-danger btn-xlarge" %>
-</p>
+<p><%= link_to "Sign up for the app", signup_path,class: "btn btn-danger btn-lg btn-xlarge" %></p>
 </div>
 <div class="card-group">
   <div class="card">
@@ -32,3 +30,6 @@
     </div>
   </div>
 </div>
+<p>
+<%= link_to "View all Recipes", recipes_path,class: "btn btn-danger btn-lg btn-xlarge" %>
+</p>
