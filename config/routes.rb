@@ -10,4 +10,5 @@ Rails.application.routes.draw do
 
   get '/signup', to: 'chefs#new'
   resources :chefs, except: [:new]
+  resources :ingredients, except: [:destroy]
 end
