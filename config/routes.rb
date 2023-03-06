@@ -2,7 +2,9 @@ Rails.application.routes.draw do
   root 'pages#home'
   get 'pages/home',to: 'pages#home'
 
-  resources :recipes
+  resources :recipes do
+    resources :comments, only: [:create]
+  end
 
   get '/login', to: 'sessions#new'
   post '/login', to: "sessions#create"
@@ -10,4 +12,6 @@ Rails.application.routes.draw do
 
   get '/signup', to: 'chefs#new'
   resources :chefs, except: [:new]
+  resources :ingredients, except: [:destroy]
+  
 end
